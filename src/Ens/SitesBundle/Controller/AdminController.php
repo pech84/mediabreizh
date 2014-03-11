@@ -1,9 +1,4 @@
 <?php
-
-//test1
-
-//test2
-
 namespace Ens\SitesBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request; 
