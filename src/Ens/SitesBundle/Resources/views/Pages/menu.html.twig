@@ -1,0 +1,22 @@
+<nav>
+        <div id="tabs">
+<ul>
+  {% for article in liste_articles %}
+  {% if app.request.locale == 'en' %}
+    <li 
+    {% if page == article.slugEn  %} class="active"  {% endif %}
+    >
+    <a href="{{ path('ens_pages_trad', {'slug': article.slugEn}) }}"{% if page == article.slugEn  %} class="active"  {% endif %} >{{ article.titleEn }}</a></li>
+    {% elseif app.request.locale == 'fr' %}
+
+     <li 
+    {% if page == article.slug  %} class="active"  {% endif %}
+    >
+    <a href="{{ path('ens_pages_trad', {'slug': article.slug}) }}"{% if page == article.slug  %} class="active"  {% endif %} >{{ article.title  }}</a></li>
+     {% endif %}
+  {% endfor %}
+  <li {% if page =='contact'  %} class="active"  {% endif %}> <a href="{{ path('ens_contact_new') }}" {% if page =='contact'  %} class="active"  {% endif %}>Contact</a></li>
+
+</ul>
+</div>
+</nav>

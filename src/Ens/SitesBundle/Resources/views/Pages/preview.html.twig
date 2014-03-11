@@ -1,0 +1,22 @@
+{% extends 'EnsSitesBundle::layout.html.twig' %}
+ 
+{% block content %}
+  	{% if is_granted('ROLE_ADMIN') %}
+      <nav>
+    		{% if entity.menu %}
+    			<li><a href="{{ path('ens_admin_publish', { 'id': entity.id }) }}">Dépublier</a></li>
+    		{% else %}
+    			<li><a href="{{ path('ens_admin_publish', { 'id': entity.id }) }}">Publier</a></li>
+    		{% endif %}
+    		<li><a href="{{ path('ens_admin_edit', { 'id': entity.id }) }}">Modifier</a></li>
+    		<li><a href="{{ path('ens_admin_delete', { 'id': entity.id }) }}">Supprimer</a></li>
+      </nav>
+  	{% endif %}
+    
+    <h1>{{ entity.title }}</h1> 
+   <p> adresse url = www.sites.local.fr\{{entity.slug}} </p>
+    <article>
+        {{ entity.content | raw  }}
+    </article>
+
+{% endblock %}

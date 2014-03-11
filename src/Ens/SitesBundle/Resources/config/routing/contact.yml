@@ -1,0 +1,7 @@
+ens_contact_create:
+    pattern:  /new
+    defaults: { _controller: "EnsSitesBundle:Contact:create" }
+
+ens_contact_new:
+    pattern:  /
+    defaults: { _controller: "EnsSitesBundle:Contact:new" }

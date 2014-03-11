@@ -1,0 +1,15 @@
+{% extends 'EnsSitesBundle::admin.html.twig' %}
+{% block title %} 
+	affichage de contact
+{% endblock %}
+
+{% block content %}
+{{entity.nom}}
+{{entity.prenom}}
+{{entity.commune}}
+{{entity.entreprise}}
+{{entity.mail}}
+{{entity.tel}}
+{{entity.titre}}
+{{entity.contenu}}
+{% endblock %}

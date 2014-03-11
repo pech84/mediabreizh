@@ -1,0 +1,35 @@
+# src/Ens/SitesBundle/Resources/config/doctrine/Pages.orm.yml
+Ens\SitesBundle\Entity\Pages:
+  type: entity
+  table: pages
+  repositoryClass: Ens\SitesBundle\Repository\PagesRepository
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    title:
+      type: string
+      length: 255
+      unique: true
+    titleEn:
+      type: string
+      length: 255
+      unique: true
+    slug:
+      type: string
+      length: 255
+      unique: true
+    slugEn:
+      type: string
+      length: 255
+      unique: true
+    menu: 
+      type: boolean
+    content:
+      type: text
+    contentEn:
+      type: text  
+  lifecycleCallbacks:
+    prePersist: [ setCreatedAtValue ]
+    preUpdate: [ setUpdatedAtValue ]

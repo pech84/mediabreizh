@@ -1,0 +1,16 @@
+parameters:
+#    ens_sites.example.class: Ens\SitesBundle\Example
+
+services:
+#    ens_sites.example:
+#        class: %ens_sites.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    ens_sites.tiny:
+        class: Ens\SitesBundle\Form\Type\TinyType
+        tags:
+            - { name: form.type, alias: tiny }
+    ens_sites.tini:
+        class: Ens\SitesBundle\Form\Type\TiniType
+        tags:
+            - { name: form.type, alias: tini }
+

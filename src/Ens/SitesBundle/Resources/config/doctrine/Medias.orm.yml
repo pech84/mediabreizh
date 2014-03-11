@@ -1,0 +1,26 @@
+# src/Ens/SitesBundle/Resources/config/doctrine/Medias.orm.yml
+Ens\SitesBundle\Entity\Medias:
+  type: entity
+  table: medias
+  repositoryClass: Ens\SitesBundle\Repository\MediasRepository
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      type: string
+      length: 255
+    postId: 
+      type: integer
+      length: 255
+    type:
+      type: string  
+      length: 255
+
+  lifecycleCallbacks:
+      prePersist: [ preUpload ]
+      preUpdate: [ preUpload ]
+      postPersist: [ upload ]
+      postUpdate: [ upload ]
+      postRemove: [ removeUpload ]

@@ -1,0 +1,72 @@
+{% if app.session.flashbag.get('error') %}
+          <div class="flash_error">
+            {{ flashMessage }}
+          </div>
+        {% endif %}
+        
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+        {% endfor %}
+
+<h1>Gestion des images {{entity.postId}}</h1>
+  <form action="{{ path('ens_admin_medias', { 'postId': entity.postId } )}}" method="post" {{ form_enctype(form) }}>
+    <table id="medias_form">
+      <tfoot>
+        <tr>
+          <td colspan="2">
+            <input type="submit" value="envoyer images" />
+          </td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr>
+          <th>{{ form_label(form.file) }}</th>
+          <td>
+            {{ form_errors(form.file) }}
+            {{ form_widget(form.file) }}
+          </td>
+        </tr>
+        <tr>
+          <th>{{ form_label(form.name) }}</th>
+          <td>
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name) }}
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+ 
+    {{ form_rest(form) }}
+  </form>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Titre</th>
+      <th>Action</th>
+    </tr>
+  </thead> 
+  <tbody>
+    {% for ent in entity_list %}
+    <tr>
+      <td>       
+            <img src="/uploads/medias/{{ ent.name }}"
+              height="100"
+              alt="{{ entity.name }}" >
+      <td><{{ ent.name }}></td>
+      <td><a onclick="return confirm('Voulez vous vraiment supprimer cette image?'); "><href="wwww.84bis.fr"></td>
+    </tr>
+    </div>
+    {% endfor %}
+
+  </tbody> 
+</table>
+
+<script src="{{ asset('js/tinymce/tinymce.min.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+  
+</script>

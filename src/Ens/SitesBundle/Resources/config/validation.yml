@@ -1,0 +1,29 @@
+Ens\SitesBundle\Entity\Pages:
+    properties:
+        title:
+            - NotBlank: ~
+        titleEn:
+            - NotBlank: ~
+        content:
+            - NotBlank: ~
+        contentEn:
+            - NotBlank: ~
+            
+Ens\SitesBundle\Entity\Contact:
+    properties:
+        prenom:
+            - NotBlank: ~
+        nom:
+            - NotBlank: ~
+        mail:
+            - NotBlank: ~
+            - Email: ~
+        titre:
+            - NotBlank: ~
+        contenu:
+            - NotBlank: ~
+
+Ens\SitesBundle\Entity\Medias:
+    properties:
+        file:
+            - Image: ~

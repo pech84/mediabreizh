@@ -1,0 +1,34 @@
+html {
+  margin: 0;
+  padding: 0;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; /* pour Chrome et Safari */
+/* pour Firefox */
+/* pour Opera */
+/* version standardisÃ©e */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url('../img/stockvault--old-grunge-vintage-texture113524a.jpg');
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; /* pour Chrome et Safari */
+/* pour Firefox */
+/* pour Opera */
+/* version standardisée */
+}
+
+
+nav {
+height: 33px;
+background-color: black;
+}
+
+section {
+
+}

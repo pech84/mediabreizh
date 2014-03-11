@@ -1,0 +1,51 @@
+ens_admin_index:
+    pattern:  /
+    defaults: { _controller: "EnsSitesBundle:Admin:index" }
+
+ens_admin_create:
+    pattern:  /ajouter
+    defaults: { _controller: "EnsSitesBundle:Admin:create" }
+
+ens_admin_new:
+    pattern:  /new
+    defaults: { _controller: "EnsSitesBundle:Admin:new" }
+
+ens_admin_edit:
+    pattern:  /editer/{id}
+    defaults: { _controller: "EnsSitesBundle:Admin:edit" }
+
+ens_admin_update:
+    pattern:  /update/{id}
+    defaults: { _controller: "EnsSitesBundle:Admin:update" }
+
+ens_admin_preview:
+    pattern:  /preview/{id}
+    defaults: { _controller: "EnsSitesBundle:Admin:preview" }
+
+ens_admin_delete:
+    pattern:  /delete/{id}
+    defaults: { _controller: "EnsSitesBundle:Admin:delete" }
+
+ens_admin_publish:
+    pattern:  /publish/{id}
+    defaults: { _controller: "EnsSitesBundle:Admin:publish" }
+
+ens_admin_contact:
+    pattern:  /contact
+    defaults: { _controller: "EnsSitesBundle:Admin:contact" }
+
+ens_admin_medias:
+    pattern:  /medias/index/{postId}
+    defaults: { _controller: "EnsSitesBundle:Medias:index" }
+
+ens_admin_contact_del:
+    pattern:  /contact/delete/{id}
+    defaults: { _controller: "EnsSitesBundle:Contact:delete" }
+
+ens_admin_contact_show:
+    pattern:  /contact/show/{id}
+    defaults: { _controller: "EnsSitesBundle:Contact:show" }
+
+ens_admin_mdp:
+    pattern:  /mdp/{id}
+    defaults: { _controller: "EnsSitesBundle:Admin:mdp" }

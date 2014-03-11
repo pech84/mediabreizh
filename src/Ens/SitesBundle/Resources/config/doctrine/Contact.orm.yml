@@ -1,0 +1,36 @@
+# src/Ens/SitesBundle/Resources/config/doctrine/Contact.orm.yml
+ 
+Ens\SitesBundle\Entity\Contact:
+  type: entity
+  table: contact
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    nom:
+      type: string
+      length: 255
+    prenom:
+      type: string
+      length: 255
+    entreprise:
+        type: string
+        lenght: 255
+        nullable: true
+    commune:
+        type: string
+        lenght: 255
+        nullable: true
+    mail:
+      type: string
+      length: 255
+    tel:
+      type: string
+      length: 10
+      nullable: true
+    titre:
+      type: string
+      length: 255
+    contenu:
+      type: text

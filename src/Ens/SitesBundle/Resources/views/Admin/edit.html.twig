@@ -1,0 +1,108 @@
+{% extends 'EnsSitesBundle::admin.html.twig' %}
+{% form_theme edit_form _self %}
+ 
+{% block field_errors %}
+{% spaceless %}
+  {% if errors|length > 0 %}
+    <ul class="error_list">
+      {% for error in errors %}
+        <li>{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endspaceless %}
+{% endblock field_errors %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+ 
+{% block content %}
+  <h1>Pages creation</h1>
+  <form action="{{ path('ens_admin_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    <table id="job_form">
+      <tfoot>
+        <tr>
+          <td colspan="2">
+            <input type="submit" value="Preview your job" />
+          </td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr>
+          <th>{{ form_label(edit_form.title) }}</th>
+          <td>
+            {{ form_errors(edit_form.title) }}
+            {{ form_widget(edit_form.title) }}
+          </td>
+          <th>{{ form_label(edit_form.titleEn) }}</th>
+          <td>
+            {{ form_errors(edit_form.titleEn) }}
+            {{ form_widget(edit_form.titleEn) }}
+          </td>
+        </tr>
+        <tr>
+          <th>{{ form_label(edit_form.content) }}</th>
+          <td>
+            {{ form_errors(edit_form.content) }}
+            {{ form_widget(edit_form.content) }}
+          </td>
+          <th>{{ form_label(edit_form.contentEn) }}</th>
+          <td>
+            {{ form_errors(edit_form.contentEn) }}
+            {{ form_widget(edit_form.contentEn) }}
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+ 
+    {{ form_rest(edit_form) }}
+  </form>
+{% endblock %}
+
+{% block javascripts %}
+      {#<script src="{{ asset('js/ckeditor/ckeditor.js') }}" type="text/javascript"></script>#}
+      <script src="{{ asset('js/tinymce/tinymce.min.js') }}" type="text/javascript"></script>
+      <script type="text/javascript">
+tinyMCE.init({
+        // General options
+        mode : "specific_textareas",
+        editor_selector : "tiny"|"tini",
+        relative_urls  : false,
+     plugins: [
+         "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+         "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+         "save table contextmenu directionality emoticons template paste textcolor"
+   ],
+
+        // Theme options
+        theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,bullist,numlist,|,justifyleft,justifycenter,justifyright,justifyfull,|,formatselect,|,link,unlink,image,code",
+        theme_advanced_buttons2 : "tablecontrols,code",
+        theme_advanced_buttons3 : "",
+        theme_advanced_buttons4 : "",
+        theme_advanced_toolbar_location : "top",
+        theme_advanced_toolbar_align : "left",
+        theme_advanced_statusbar_location : "bottom",
+        theme_advanced_resizing : true,
+
+        file_browser_callback : function fileBrowser(field_name, url, type, win){
+          tinyMCE.activeEditor.windowManager.open({
+            file : '{{path('ens_admin_medias', {'postId': entity.id})}}',
+            title : 'Gallerie',
+            width : 800,
+            height: 600,
+            resizable: 'yes',
+            inline: 'yes',
+            close_previous :'no'
+          },{
+            window : win,
+            input : field_name
+          }) ;
+          return false;
+  }
+
+});
+
+</script>
+    {% endblock %}  

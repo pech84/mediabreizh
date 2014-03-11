@@ -1,0 +1,32 @@
+EnsSitesBundle_homepage:
+    pattern:  /
+    defaults: { _controller: EnsSitesBundle:Pages:show }
+
+login:
+    pattern:   /login
+    defaults:  { _controller: EnsSitesBundle:Default:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:   /logout
+
+
+EnsSitesBundle_admin:
+    resource: "@EnsSitesBundle/Resources/config/routing/admin.yml"
+    prefix: /admin
+
+EnsSitesBundle_contact:
+    resource: "@EnsSitesBundle/Resources/config/routing/contact.yml"
+    prefix: /{_locale}/contact
+
+EnsSitesBundle_pages:
+    resource: "@EnsSitesBundle/Resources/config/routing/pages.yml"
+
+
+EnsSitesBundle:
+    resource:  "@EnsSitesBundle/Resources/config/routing/pagestrad.yml"
+    prefix:    /{_locale}/
+    requirements:
+        _locale: en|fr # les locales disponibles, séparées par des pipes « | »

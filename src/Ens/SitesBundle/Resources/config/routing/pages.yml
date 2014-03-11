@@ -1,0 +1,3 @@
+ens_pages:
+    pattern:  /{slug}
+    defaults: { _controller: "EnsSitesBundle:Pages:show" }

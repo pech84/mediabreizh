@@ -1,0 +1,27 @@
+head:
+    titre: 'Ecrivain public sur DINAN, DINARD, SAINT-MALO <br>création et tradition'
+    meta: 'A la Page Ecriture Ecrivain public DINAN DINARD SAINT-MALO LANVALLAY a-la-page-ecriture'
+    desc: 'A la Page Ecriture - Ecrivain public sur DINAN, DINARD, SAINT-MALO, LANVALLAY  à votre service pour exprimer ce que vous voudriez voir rédigé, et selon vos besoins. a-la-page-ecriture.fr'
+
+baniere:
+    desc: 'Ecrivain public sur DINAN, DINARD, SAINT-MALO'
+    slogan: 'création et tradition'
+
+contact:
+    send: 'Envoyer votre message'
+    tel: 'téléphone'
+    adress: "courrier\_:"
+    adress2: '22100 LANVALLAY'
+    prenom : "Votre prénom :"
+    nom : "Votre nom :"
+    commune : "Votre commune :"
+    entreprise : "Votre entreprise (si besoin) :"
+    email : "Votre adresse mail :"
+    tel : "Votre numéro de téléphone :"
+    titre : "Objet de votre demande :"
+    message : "Votre message :"
+
+footer:
+    legal: 'Informations légales'
+    slug: 'informations-legales'
+    desc: 'Ecrivain public sur DINAN, DINARD, SAINT-MALO, LANVALLAY, création et tradition'

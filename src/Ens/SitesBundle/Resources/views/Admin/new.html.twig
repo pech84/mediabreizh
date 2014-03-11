@@ -1,0 +1,64 @@
+{% extends 'EnsSitesBundle::admin.html.twig' %}
+{% form_theme form _self %}
+ 
+{% block field_errors %}
+{% spaceless %}
+  {% if errors|length > 0 %}
+    <ul class="error_list">
+      {% for error in errors %}
+        <li>{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endspaceless %}
+{% endblock field_errors %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+ 
+{% block content %}
+  <h1>Pages creation</h1>
+  <form action="{{ path('ens_admin_create') }}" method="post" {{ form_enctype(form) }}>
+    <table id="job_form">
+      <tfoot>
+        <tr>
+          <td colspan="2">
+            <input type="submit" value="Preview your job" />
+          </td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr>
+          <th>{{ form_label(form.title) }}</th>
+          <td>
+            {{ form_errors(form.title) }}
+            {{ form_widget(form.title) }}
+          </td>
+          <th>{{ form_label(form.titleEn) }}</th>
+          <td>
+            {{ form_errors(form.titleEn) }}
+            {{ form_widget(form.titleEn) }}
+          </td>
+        </tr>
+        <tr>
+          <th>{{ form_label(form.content) }}</th>
+          <td>
+            {{ form_errors(form.content) }}
+            {{ form_widget(form.content) }}
+          </td>
+        </tr>
+        <tr>
+          <th>{{ form_label(form.contentEn) }}</th>
+          <td>
+            {{ form_errors(form.contentEn) }}
+            {{ form_widget(form.contentEn) }}
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+ 
+    {{ form_rest(form) }}
+  </form>
+{% endblock %}

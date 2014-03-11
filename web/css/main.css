@@ -1,0 +1,211 @@
+html {
+  margin: 0;
+  padding: 0;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; /* pour Chrome et Safari */
+/* pour Firefox */
+/* pour Opera */
+/* version standardisÃ©e */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: url('../img/stockvault--old-grunge-vintage-texture113524a.jpg');
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; /* pour Chrome et Safari */
+/* pour Firefox */
+/* pour Opera */
+/* version standardisée */
+}
+
+.grid-container {
+  min-width: 750px;
+}
+
+header {
+  text-align: center;
+  background: url('../img/head.png') no-repeat;
+  background-color: #070802;
+}
+
+#menuadmin
+{
+margin:0;
+padding:0;
+  height: 33px;
+background-color: black;
+}
+
+.baniere {
+  text-align: right;
+  height: 160px;
+}
+
+.nom {
+  color: #94bd5e;
+  font-family: 'Lucida Handwriting', cursive;
+  font-size: 40px;
+  text-shadow: 2px 2px 3px white;
+}
+
+.desc {
+  color: #94bd5e;
+  font-family: 'Lucida Handwriting', cursive;
+  font-size: 15px;
+  text-shadow: 1px 1px 1px black;
+}
+
+#choisir_langue {
+  margin-top: 5px;
+  margin-right: 10px;
+
+}
+#choisir_langue img{
+border: none;
+  }
+
+/* Navigation */
+#tabs {
+  height: 34px;
+  border-bottom: 1px solid black;
+}
+
+#tabs ul {
+  font: normal 20px arial, sans, sans-serif;
+  -list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0px;
+  float: right;
+}
+
+#tabs ul li {
+  display: inline;
+  float: left;
+  height: 32px;
+  min-width: 80px;
+  text-align: center;
+  padding: 0;
+  margin: 1px 0px 0px 0px;
+  border: 1px solid black;
+  border-bottom: 1px solid black;
+  border-top-left-radius: 10px;
+}
+
+#tabs ul li.active {
+  border-bottom: 0px;
+}
+
+#tabs ul li a {
+  float: left;
+  color: #666;
+  text-decoration: none;
+  font-variant: small-caps;
+  padding: 4px;
+  text-align: center;
+  min-width: 80px;
+  background-color: rgba(255, 239, 182, 0.99);
+  border-bottom: 1px solid black;
+  border-top-left-radius: 10px;
+}
+
+#tabs ul li a.active {
+  color: #000;
+  background-color: rgba(255, 239, 182, 0.65);
+}
+
+#tabs ul li a:hover {
+  color: #000;
+  background-color: rgba(255, 239, 182, 0.75);
+}
+
+section {
+  background-color: rgba(255, 239, 182, 0.45);
+  border: 3px outset #940602;
+  border-radius: 5px;
+}
+
+form {
+  width: 100%;
+}
+
+section form th {
+  text-align: right;
+}
+
+section h2 {
+  font-size: 1em;
+}
+
+textarea#ens_contacttype_contenu {
+  width: 200%;
+}
+
+input#ens_contacttype_titre {
+  width: 200%;
+}
+
+section h1 {
+  margin-top: 0px;
+}
+
+article p {
+  text-indent: 2em;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+article em {
+  color: #94bd5e;
+  font-family: 'Lucida Handwriting', cursive;
+  text-shadow: 1px 1px 1px black;
+}
+
+footer {
+  bottom: 0px;
+  background-color: #070802;
+  border-radius: 5px;
+}
+
+footer div {
+  color: white;
+  text-align: center;
+}
+
+footer nav {
+  vertical-align: top;
+  height: 40px;
+  padding-bottom: 15px;
+  padding: 0px;
+}
+
+footer ul {
+  text-align: center;
+  margin: 0px; /*padding:    10px;
+  
+  
+   */
+list-style-type: none;
+  margin-bottom: 15px;
+}
+
+footer li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+footer ul li a {
+  float: left;
+  color: white;
+  text-decoration: none;
+  padding: 4px;
+  text-align: center;
+  min-width: 80px;
+}

@@ -1,0 +1,3 @@
+ens_sites:
+    resource: "@EnsSitesBundle/Resources/config/routing.yml"
+    prefix:   /

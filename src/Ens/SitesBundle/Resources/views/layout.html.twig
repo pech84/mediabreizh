@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% if app.request.locale == 'en' %} 
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <meta http-equiv="Content-Language" content="en" />
+{% elseif app.request.locale == 'fr' %}
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+  <meta http-equiv="Content-Language" content="fr" />
+{% endif %}
+  <head>
+    <title>
+      {% block title %}
+      {{'head.titre'|trans}}
+     {% endblock %}     
+    </title>
+    
+    <meta charset="UTF-8">
+    <meta name="wot-verification" content="6a4896eed9fd52594175"/>
+    {% block meta %}
+      <meta name="keywords" content="{{'head.meta'|trans}}" />
+      <meta name="description" content="{{'head.desc'|trans}}">
+    {% endblock %}
+    <meta
+    name="viewport"
+    content="
+      width=device-width,
+      initial-scale=1,
+      minimum-scale=1,
+      maximum-scale=1
+    "
+  />
+    
+    {% block stylesheets %}
+
+      <link rel="stylesheet" href="{{ asset('css/unsemantic-grid-responsive.css') }}" type="text/css" />
+      <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css" />
+    {% endblock %}
+    
+    
+  </head>
+  <body>
+
+    <div class="grid-container">
+      <header class="grid-80 push-10">
+        <div class="baniere">        
+      {% if is_granted('ROLE_ADMIN') %}
+        <nav>
+          <div id="menuadmin">
+            <p>            
+              <a href="{{ path('ens_admin_index') }}">Gestion des pages</a>
+              <a href="{{ path('ens_admin_contact') }}">gestion des demande de contact</a>
+              <a href="{{ path('ens_admin_mdp', {'id': app.user.id}) }}">modification du mot de passe</a>
+              <a href="{{ path('logout') }}">Logout</a>
+
+            </p>
+          </div>
+         </nav>
+        {% endif %}
+
+
+          <div class="nom">à la page - écriture</div> <div class="desc">{{'baniere.desc'|trans}} <br>{{'baniere.slogan'|trans}}</div> 
+        <div id="choisir_langue">
+          {% if entity is defined %}
+            <a href="{{ path('ens_pages_trad', {'_locale' : 'fr', 'slug': entity.slug}) }}" hreflang="fr"><img src="../../img/drapeau-francais.png" alt="version française" title="Version française" /></a> 
+            <a href="{{ path('ens_pages_trad', {'_locale' : 'en', 'slug': entity.slugEn}) }}" hreflang="en"><img src="../../img/drapeau-anglais.png" alt="english version" title="English version" /></a>
+
+          {% elseif contacts is defined %}
+            <a href="{{ path('ens_contact_new', {'_locale' : 'fr'}) }}" hreflang="fr"><img src="../../img/drapeau-francais.png" alt="version française" title="Version française" /></a> 
+            <a href="{{ path('ens_contact_new', {'_locale' : 'en'}) }}" hreflang="en"><img src="../../img/drapeau-anglais.png" alt="english version" title="English version" /></a>
+          {% endif %}
+        </div>
+
+        </div>
+       
+
+        {# modifier a partir de url #}
+        {% if entity is defined %}
+          {{ render(controller("EnsSitesBundle:Pages:menu",{'page' : entity.slug})) }}
+
+        {% elseif contacts is defined %}
+          {{ render(controller("EnsSitesBundle:Pages:menu",{'page' : 'contact'})) }}
+        {% endif %}
+      </header>
+
+      <section class="grid-80 push-10">
+        {% if app.session.flashbag.get('error') %}
+          <div class="flash_error">
+            {{ flashMessage }}
+          </div>
+        {% endif %}
+        
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+        {% endfor %}
+
+          {% block content %}
+          {% endblock %}
+      </section>
+
+      <footer class="grid-80 push-10">
+        <div>a-la-page-ecriture.fr <br>
+{{'footer.desc'|trans}} </div>
+        <nav>
+          <ul>
+            <li> <a href="http://www.84bis.fr">84bis</a></li>
+            {% if app.request.locale == 'en' %}
+            <li><a href="{{ path('ens_pages_trad', {'slug' : "notices-pages"}) }}">{{'footer.legal'|trans}}</a></li>
+            {% elseif app.request.locale == 'fr' %}
+            <li><a href="{{ path('ens_pages_trad', {'slug' : "informations-legales"}) }}">{{'footer.legal'|trans}}</a></li>
+            {% endif %}
+          </ul>
+         
+          
+        </nav>
+      </footer>
+    </div>
+    {% block javascripts %}
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41751254-2', 'a-la-page-ecriture.fr');
+  ga('send', 'pageview');
+
+</script>
+    {% endblock %}
+  </body>
+</html>

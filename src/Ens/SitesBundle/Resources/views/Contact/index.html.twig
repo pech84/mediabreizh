@@ -1,0 +1,26 @@
+{% extends 'EnsSitesBundle::admin.html.twig' %}
+{% block content %}
+
+{% for contact in contacts %}
+<ul>
+	<li>
+		{{contact.prenom}} 
+	</li>
+	<li>
+		{{contact.nom}} 
+	</li>
+	<li>
+		{{contact.mail}} 
+	</li>
+	<li>
+		{{contact.titre}} 
+	</li>
+	<li>
+		{{contact.contenu}} 
+	</li>
+	 <li><a href="{{ path('ens_admin_contact_show', { 'id': contact.id }) }}">Voir</a></li>
+	 <li><a href="{{ path('ens_admin_contact_del', { 'id': contact.id }) }}">Supprimer</a></li>
+</ul>
+{% endfor %}
+
+{%endblock %}

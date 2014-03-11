@@ -1,0 +1,27 @@
+﻿head:
+    titre: 'Letter-writer and administrative clerk in the area of DINAN, DINARD, SAINT-MALO, LANVALLAY <br>creation & tradition '
+    meta: 'A la Page Ecriture Letter-writer and administrative clerk DINAN, DINARD, SAINT-MALO, LANVALLAY '
+    desc: 'A la Page Ecriture -  Letter-writer and administrative clerk in the area of DINAN, DINARD, SAINT-MALO, LANVALLAY  is a writing service, a secretarial and academic support in French, Spanish and English at your disposal to express what you would like to have written, translated, according to your needs. a-la-page-ecriture.fr'
+
+baniere:
+    desc: 'Letter-writer and administrative clerk in the area of DINAN, DINARD, SAINT-MALO'
+    slogan: 'creation & tradition'
+
+contact:
+    send: 'Send your message'
+    tel: 'telephone'
+    adress: "address :"
+    adress2: '22100 LANVALLAY, FRANCE'
+    prenom : "Christian name :"
+    nom : "Name :"
+    commune : "Town and zip code :"
+    entreprise : "Company name (if necessary) :"
+    email : "Email address :"
+    tel : "Phone number :"
+    titre : "Request :"
+    message : "Message :"
+
+footer:
+    desc: 'Letter-writer and administrative clerk in the area of DINAN, DINARD, SAINT-MALO, LANVALLAY creation & tradition '
+    slug: 'notices-pages'
+    legal: 'Legal notice pages'

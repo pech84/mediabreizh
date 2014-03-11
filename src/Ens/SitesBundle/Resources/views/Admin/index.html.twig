@@ -1,0 +1,15 @@
+{% extends 'EnsSitesBundle::admin.html.twig' %}
+{% block content %}
+<p>
+
+</p>
+<a href="{{ path('ens_admin_new') }}">Ajouter</a>
+<ul>
+{% for ent in entity %}
+	<li>
+	{{ent.title}} <a href="{{ path('ens_admin_edit', {'id':ent.id})}}">Modifier</a> /  <a href="{{ path('ens_admin_delete', {'id':ent.id})}}">Supprimer</a> /en ligne
+	</li>
+{% endfor %}
+</ul>
+ajouter
+{%endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {% block title %}
+        Sites - en cours de construction mais c'est super
+      {% endblock %}
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% block stylesheets %}
+
+      <link rel="stylesheet" href="{{ asset('css/unsemantic-grid-responsive.css') }}" type="text/css" />
+      <link rel="stylesheet" href="{{ asset('css/admin.css') }}" type="text/css" />
+    {% endblock %}    
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <nav>
+          <a href="{{ path('EnsSitesBundle_homepage') }}">voir le site</a>
+          <a href="{{ path('ens_admin_index') }}">Gestion des pages</a>
+          <a href="{{ path('ens_admin_contact') }}">gestion des demande de contact</a>
+          <a href="{{ path('ens_admin_mdp', {'id': app.user.id}) }}">modification du mot de passe</a>
+          <a href="{{ path('logout') }}">Logout</a>
+        </nav>
+      </header>
+
+      {% if app.session.flashbag.get('error') %}
+          <div class="flash_error">
+            {{ flashMessage }}
+          </div>
+        {% endif %}
+ 
+      <section>
+        
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+      </section>
+ 
+      <footer>
+      </footer>
+    </div>
+    {% block javascripts %}
+     
+    {% endblock %}
+        
+  </body>
+</html>
