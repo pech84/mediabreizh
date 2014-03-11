@@ -19,6 +19,7 @@ class ContactType extends AbstractType
         $builder->add('mail', null, array('label' => 'contact.email'));
         $builder->add('tel', null, array('label' => 'contact.tel'));
         $builder->add('titre', null, array('label' => 'contact.titre'));
+        //ajout form fichier
         $builder->add('contenu', null, array('label' => 'contact.message', 'attr' => array('rows' => '10')));
     }
 

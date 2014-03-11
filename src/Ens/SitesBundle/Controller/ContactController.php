@@ -48,6 +48,8 @@ class ContactController extends Controller
 		 
 		    return $this->redirect($this->generateUrl('EnsSitesBundle_homepage'));
 		}
+
+		//ajout traitement fichier
 		 
 	  return $this->render('EnsSitesBundle:Contact:new.html.twig', array(
 	    'contacts' => $contacts,
