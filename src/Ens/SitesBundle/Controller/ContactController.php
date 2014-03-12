@@ -5,6 +5,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ens\SitesBundle\Entity\Contact;
 use Ens\SitesBundle\Form\ContactType;
+//require_once 'lib/swift_required.php';
 
 class ContactController extends Controller
 {
@@ -24,20 +25,23 @@ class ContactController extends Controller
 	    // Create the message
 		$message = \Swift_Message::newInstance()
 
-	  // Give the message a subject
-	  ->setSubject($contact->getTitre())
+		// Give the message a subject
+		->setSubject($contact->getTitre())
 
-	  // Set the From address with an associative array
-	  ->setFrom($contact->getMail())
+		// Set the From address with an associative array
+		->setFrom($contact->getMail())
 
-	  // Set the To addresses with an associative array
-	  ->setTo('84breizhinfoservices@gmail.com')
+		// Set the To addresses with an associative array
+		->setTo('84breizhinfoservices@gmail.com')
 
-	  // Give it a body
-	  ->setBody(($this->renderView('EnsSitesBundle:Contact:email.txt.twig', array(
-	  		'contact' => $contact,
-		))));
-	  //ajouter un fichier joint
+		// Give it a body
+		->setBody(($this->renderView('EnsSitesBundle:Contact:email.txt.twig', array(
+			'contact' => $contact,
+		))))
+		//ajouter un fichier joint
+		   
+		// Optionally add any attachments
+	  	//->attach(Swift_Attachment::fromPath('/uploads/contacts/5320bebf0fd9e.ico'));
 
 		$this->get('mailer')->send($message);	
 
