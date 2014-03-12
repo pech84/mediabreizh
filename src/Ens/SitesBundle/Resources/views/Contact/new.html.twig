@@ -80,7 +80,13 @@
             {{ form_widget(form.titre) }}
           </td>
         </tr>
-        <%ajout form fichier%>
+      <tr>
+          <th>{{ form_label(form.file) }}</th>
+          <td>
+            {{ form_errors(form.file) }}
+            {{ form_widget(form.file) }}
+          </td>
+        </tr>
         <tr>
           <th>{{ form_label(form.contenu) }}</th>
           <td >
