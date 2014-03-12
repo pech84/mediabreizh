@@ -37,7 +37,7 @@ class ContactController extends Controller
 		// Give it a body
 		->setBody(($this->renderView('EnsSitesBundle:Contact:email.txt.twig', array(
 			'contact' => $contact,
-		))))
+		))));
 		//ajouter un fichier joint
 		   
 		// Optionally add any attachments
