@@ -22,6 +22,8 @@ Ens\SitesBundle\Entity\Contact:
             - NotBlank: ~
         contenu:
             - NotBlank: ~
+        file:
+            - File: ~
 
 Ens\SitesBundle\Entity\Medias:
     properties:

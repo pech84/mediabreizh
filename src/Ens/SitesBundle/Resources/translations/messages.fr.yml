@@ -20,6 +20,7 @@ contact:
     tel : "Votre numéro de téléphone :"
     titre : "Objet de votre demande :"
     message : "Votre message :"
+    fichier: "Envoyer un fichier"
 
 footer:
     legal: 'Informations légales'

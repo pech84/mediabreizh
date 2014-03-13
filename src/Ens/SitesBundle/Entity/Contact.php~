@@ -39,6 +39,14 @@ class Contact
      */
     private $contenu;
 
+    /**
+     * @var string
+     */
+    private $fichier;
+
+
+    private $file;
+
 
     /**
      * Get id
@@ -247,5 +255,50 @@ class Contact
     public function getTel()
     {
         return $this->tel;
+    }
+
+
+    /**
+     * Set fichier
+     *
+     * @param string $fichier
+     * @return Contact
+     */
+    public function setFichier($fichier)
+    {
+        $this->fichier = $fichier;
+    
+        return $this;
+    }
+
+    /**
+     * Get fichier
+     *
+     * @return string 
+     */
+    public function getFichier()
+    {
+        return $this->fichier;
+    }
+
+
+    protected function getUploadDir()
+    {
+        return 'uploads/contacts';
+    }
+     
+    protected function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+     
+    public function getWebPath()
+    {
+        return null === $this->fichier ? null : $this->getUploadDir().'/'.$this->fichier;
+    }
+     
+    public function getAbsolutePath()
+    {
+        return null === $this->fichier ? null : $this->getUploadRootDir().'/'.$this->fichier;
     }
 }

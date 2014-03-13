@@ -39,6 +39,14 @@ class Contact
      */
     private $contenu;
 
+    /**
+     * @var string
+     */
+    private $fichier;
+
+
+    public $file;
+
 
     /**
      * Get id
@@ -248,4 +256,114 @@ class Contact
     {
         return $this->tel;
     }
+
+
+    /**
+     * Set fichier
+     *
+     * @param string $fichier
+     * @return Contact
+     */
+    public function setFichier($fichier)
+    {
+        $this->fichier = $fichier;
+    
+        return $this;
+    }
+
+    /**
+     * Get fichier
+     *
+     * @return string 
+     */
+    public function getFichier()
+    {
+        return $this->fichier;
+    }
+
+
+    protected function getUploadDir()
+    {
+        return 'uploads/contacts';
+    }
+     
+    protected function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+     
+    public function getWebPath()
+    {
+        return null === $this->fichier ? null : $this->getUploadDir().'/'.$this->fichier;
+    }
+     
+    public function getAbsolutePath()
+    {
+        return null === $this->fichier ? null : $this->getUploadRootDir().'/'.$this->fichier;
+    }
+
+    
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        // Add your code here
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setExpiresAtValue()
+    {
+        // Add your code here
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function setUpdatedAtValue()
+    {
+        // Add your code here
+    }
+
+
+    /**
+    * @ORM\prePersist
+    */
+    public function preUpload()
+    {
+      if (null !== $this->file) {
+        // do whatever you want to generate a unique name
+        $this->fichier = uniqid().'.'.$this->file->guessExtension();
+      }
+    }
+     
+    /**
+    * @ORM\postPersist
+    */
+    public function upload()
+    {
+      if (null === $this->file) {
+        return;
+      }
+     
+      // if there is an error when moving the file, an exception will
+      // be automatically thrown by move(). This will properly prevent
+      // the entity from being persisted to the database on error
+      $this->file->move($this->getUploadRootDir(), $this->fichier);
+     
+      unset($this->file);
+    }
+     
+    /**
+    * @ORM\postRemove
+    */
+    public function removeUpload()
+    {
+      if ($file = $this->getAbsolutePath()) {
+        unlink($file);
+  }
+}
 }

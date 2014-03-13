@@ -20,6 +20,7 @@ contact:
     tel : "Phone number :"
     titre : "Request :"
     message : "Message :"
+    fichier : "Send a file"
 
 footer:
     desc: 'Letter-writer and administrative clerk in the area of DINAN, DINARD, SAINT-MALO, LANVALLAY creation & tradition '

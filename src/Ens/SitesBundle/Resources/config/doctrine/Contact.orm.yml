@@ -32,5 +32,15 @@ Ens\SitesBundle\Entity\Contact:
     titre:
       type: string
       length: 255
+    fichier:
+      type: string
+      length: 255
     contenu:
       type: text
+
+  lifecycleCallbacks:
+    prePersist: [ preUpload, setCreatedAtValue, setExpiresAtValue ]
+    preUpdate: [ preUpload, setUpdatedAtValue ]
+    postPersist: [ upload ]
+    postUpdate: [ upload ]
+    postRemove: [ removeUpload ]
