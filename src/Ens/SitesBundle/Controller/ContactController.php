@@ -33,16 +33,18 @@ class ContactController extends Controller
 
 		// Set the To addresses with an associative array
 		->setTo('84breizhinfoservices@gmail.com')
-		// Optionally add any attachments
-	  	->attach(\Swift_Attachment::fromPath('/uploads/contacts/5320bebf0fd9e.ico'))
+
 		// Give it a body
 		->setBody(($this->renderView('EnsSitesBundle:Contact:email.txt.twig', array(
 			'contact' => $contact,
 		))));
 		//ajouter un fichier joint
-		   
-		// Optionally add any attachments
-	  	//->attach(Swift_Attachment::fromPath('/uploads/contacts/5320bebf0fd9e.ico')),
+				// Optionally add any attachments
+		if($contact->getWebPath())
+		{
+			$message->attach(\Swift_Attachment::fromPath($contact->getWebPath())) ;
+		}
+
 
 		$this->get('mailer')->send($message);	
 
