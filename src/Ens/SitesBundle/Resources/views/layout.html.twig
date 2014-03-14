@@ -57,7 +57,7 @@
         {% endif %}
 
 
-          <div class="nom">à la page - écriture</div> <div class="desc">{{'baniere.desc'|trans}} <br>{{'baniere.slogan'|trans}}</div> 
+          <div class="nom">{{'head.nom'|trans}}</div> <div class="desc">{{'baniere.desc'|trans}} <br>{{'baniere.slogan'|trans}}</div> 
         <div id="choisir_langue">
           {% if entity is defined %}
             <a href="{{ path('ens_pages_trad', {'_locale' : 'fr', 'slug': entity.slug}) }}" hreflang="fr"><img src="../../img/drapeau-francais.png" alt="version française" title="Version française" /></a> 
@@ -99,7 +99,7 @@
       </section>
 
       <footer class="grid-80 push-10">
-        <div>a-la-page-ecriture.fr <br>
+        <div>{{'footer.site'|trans}}<br>
 {{'footer.desc'|trans}} </div>
         <nav>
           <ul>
