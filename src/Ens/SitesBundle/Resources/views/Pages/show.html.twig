@@ -1,20 +1,21 @@
 {% extends 'EnsSitesBundle::layout.html.twig' %}
 {% block title %} 
-{% if app.request.locale == 'en' %}
-	{{ entity.titleEn }} - A la Page Ecriture - {{'Ecrivain public sur DINAN, DINARD, SAINT-MALO, LANVALLAY a-la-page-ecriture.fr'|trans}}
 
+{% if app.request.locale == 'en' %}
+	{{ entity.titleEn }}
 {% elseif app.request.locale == 'fr' %}
-	{{ entity.title }} - A la Page Ecriture - {{'Ecrivain public sur DINAN, DINARD, SAINT-MALO, LANVALLAY a-la-page-ecriture.fr'|trans}}
- {% endif %}
+	{{ entity.title }}
+{% endif %}
+- {{'title.nom'|trans}} - {{'title.desc'|trans}}
 	
 {% endblock %}
 {% block meta %}
 {% if app.request.locale == 'en' %}
-<meta name="keywords" content="{{ entity.titleEn }} {{'A la Page Ecriture Ecrivain public DINAN DINARD SAINT-MALO LANVALLAY a-la-page-ecriture'|trans}}" />
-  <meta name="description" content="{{ entity.titleEn }} - {{'A la Page Ecriture - Ecrivain public sur DINAN, DINARD, SAINT-MALO, LANVALLAY  à votre service pour exprimer ce que vous voudriez voir rédigé, et selon vos besoins. a-la-page-ecriture.fr'|trans}}">
- {% elseif app.request.locale == 'fr' %}
- <meta name="keywords" content="{{ entity.title }} {{'A la Page Ecriture Ecrivain public DINAN DINARD SAINT-MALO LANVALLAY a-la-page-ecriture'|trans}}" />
-  <meta name="description" content="{{ entity.title }} - {{'A la Page Ecriture - Ecrivain public sur DINAN, DINARD, SAINT-MALO, LANVALLAY  à votre service pour exprimer ce que vous voudriez voir rédigé, et selon vos besoins. a-la-page-ecriture.fr'|trans}}">
+	<meta name="keywords" content="{{ entity.titleEn }} {{'head.meta'|trans}}" />
+	<meta name="description" content="{{ entity.titleEn }} - {{'head.desc'|trans}}">
+{% elseif app.request.locale == 'fr' %}
+	<meta name="keywords" content="{{ entity.title }} {{'head.meta'|trans}}" />
+	<meta name="description" content="{{ entity.title }} - {{'head.desc'|trans}}">
  {% endif %}
 {% endblock %}
 {% block content %}

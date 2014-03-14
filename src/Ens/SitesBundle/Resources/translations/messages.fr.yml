@@ -1,4 +1,8 @@
+title:
+    nom: "A la page Ecriture"
+    desc: "Ecrivain public sur DINAN, DINARD, SAINT-MALO, LANVALLAY a-la-page-ecriture.fr"
 head:
+    nom: 'A la page écriture'
     titre: 'Ecrivain public sur DINAN, DINARD, SAINT-MALO <br>création et tradition'
     meta: 'A la Page Ecriture Ecrivain public DINAN DINARD SAINT-MALO LANVALLAY a-la-page-ecriture'
     desc: 'A la Page Ecriture - Ecrivain public sur DINAN, DINARD, SAINT-MALO, LANVALLAY  à votre service pour exprimer ce que vous voudriez voir rédigé, et selon vos besoins. a-la-page-ecriture.fr'
@@ -26,3 +30,4 @@ footer:
     legal: 'Informations légales'
     slug: 'informations-legales'
     desc: 'Ecrivain public sur DINAN, DINARD, SAINT-MALO, LANVALLAY, création et tradition'
+    site: 'a-la-page-ecriture.fr'
