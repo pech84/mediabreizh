@@ -1,4 +1,8 @@
-﻿head:
+﻿title:
+    nom: "A la page Ecriture"
+    desc: "Ecrivain public sur DINAN, DINARD, SAINT-MALO, LANVALLAY a-la-page-ecriture.fr"
+head:
+    nom: 'A la page écriture'
     titre: 'Letter-writer and administrative clerk in the area of DINAN, DINARD, SAINT-MALO, LANVALLAY <br>creation & tradition '
     meta: 'A la Page Ecriture Letter-writer and administrative clerk DINAN, DINARD, SAINT-MALO, LANVALLAY '
     desc: 'A la Page Ecriture -  Letter-writer and administrative clerk in the area of DINAN, DINARD, SAINT-MALO, LANVALLAY  is a writing service, a secretarial and academic support in French, Spanish and English at your disposal to express what you would like to have written, translated, according to your needs. a-la-page-ecriture.fr'
@@ -20,8 +24,10 @@ contact:
     tel : "Phone number :"
     titre : "Request :"
     message : "Message :"
+    fichier : "Send a file"
 
 footer:
     desc: 'Letter-writer and administrative clerk in the area of DINAN, DINARD, SAINT-MALO, LANVALLAY creation & tradition '
     slug: 'notices-pages'
     legal: 'Legal notice pages'
+    site: 'a-la-page-ecriture.fr'
